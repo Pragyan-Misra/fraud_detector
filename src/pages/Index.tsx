@@ -1,48 +1,36 @@
 import Navigation from "@/components/Navigation";
 import VerificationInterface from "@/components/VerificationInterface";
-import heroImage from "@/assets/hero-image.jpg";
+
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-transparent">
       <Navigation />
-      
-      {/* Hero Background */}
-      <div className="relative">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
-        
-        {/* Main Content */}
-        <div className="relative z-10">
-          <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div id="verify" className="scroll-mt-20">
-              <VerificationInterface />
+      <div className="relative z-10">
+        <main className="container mx-auto mt-16 px-4 sm:px-6 lg:px-8 py-16">
+          <div id="verify" className="scroll-mt-20">
+            <VerificationInterface />
+          </div>
+        </main>
+        {/* Features Section */}
+        <section className="py-24 bg-transparent" id="how-it-works">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-black  mb-4">
+                How VeritasAI Works
+              </h2>
+              {/* <p className="text-lg text-black max-w-3xl mx-auto">
+                Our advanced AI system analyzes content across multiple dimensions to provide 
+                you with accurate, trustworthy verification results in seconds.
+              </p> */}
             </div>
-          </main>
-          
-          {/* Features Section */}
-          <section className="py-24 bg-neutral-50" id="how-it-works">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-foreground mb-4">
-                  How VeritasAI Works
-                </h2>
-                <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-                  Our advanced AI system analyzes content across multiple dimensions to provide 
-                  you with accurate, trustworthy verification results in seconds.
-                </p>
-              </div>
-              
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="text-center p-6 bg-background rounded-xl shadow-sm border border-border">
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center p-6 bg-background rounded-xl shadow-sm border border-border">
                   <div className="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold">1</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">Submit Content</h3>
-                  <p className="text-neutral-600">
+                  <h3 className="text-xl font-semibold text-black mb-2">Submit Content</h3>
+                  <p className="text-black">
                     Paste text, enter a URL, or upload an image or document for analysis.
                   </p>
                 </div>
@@ -51,8 +39,8 @@ const Index = () => {
                   <div className="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold">2</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">AI Analysis</h3>
-                  <p className="text-neutral-600">
+                  <h3 className="text-xl font-semibold text-black mb-2">AI Analysis</h3>
+                  <p className="text-black">
                     Our ensemble of AI models cross-references claims against credible sources.
                   </p>
                 </div>
@@ -61,8 +49,8 @@ const Index = () => {
                   <div className="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold">3</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">Get Results</h3>
-                  <p className="text-neutral-600">
+                  <h3 className="text-xl font-semibold text-black mb-2">Get Results</h3>
+                  <p className="text-black">
                     Receive a clear verdict with detailed explanations and source references.
                   </p>
                 </div>
@@ -87,9 +75,7 @@ const Index = () => {
               </div>
             </div>
           </section>
-        </div>
       </div>
-      
       {/* Footer */}
       <footer className="bg-neutral-800 text-neutral-300 py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,7 +91,6 @@ const Index = () => {
                 Cutting through the noise to discover the truth with advanced AI verification technology.
               </p>
             </div>
-            
             <div>
               <h3 className="font-semibold text-neutral-100 mb-3">Product</h3>
               <ul className="space-y-2 text-sm">
@@ -115,7 +100,6 @@ const Index = () => {
                 <li><a href="#" className="hover:text-primary transition-colors">Browser Extension</a></li>
               </ul>
             </div>
-            
             <div>
               <h3 className="font-semibold text-neutral-100 mb-3">Company</h3>
               <ul className="space-y-2 text-sm">
@@ -125,7 +109,6 @@ const Index = () => {
                 <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
               </ul>
             </div>
-            
             <div>
               <h3 className="font-semibold text-neutral-100 mb-3">Support</h3>
               <ul className="space-y-2 text-sm">
@@ -136,7 +119,6 @@ const Index = () => {
               </ul>
             </div>
           </div>
-          
           <div className="border-t border-neutral-700 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
             <p className="text-sm text-neutral-400">
               © 2024 VeritasAI. All rights reserved.
@@ -160,6 +142,6 @@ const Index = () => {
       </footer>
     </div>
   );
-};
+}
 
 export default Index;

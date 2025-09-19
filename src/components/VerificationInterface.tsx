@@ -58,13 +58,13 @@ const VerificationInterface = () => {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       {/* Main Interface Card */}
-      <Card className="border-2 border-primary/20 shadow-lg">
+  <Card className="bg-white/40 backdrop-blur-md border-2 border-primary/20 shadow-lg">
         <CardContent className="p-8">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
-              Cut through the noise. <span className="text-primary">Discover the truth.</span>
+            <h1 className="text-4xl font-bold text-black mb-4">
+              Cut through the noise. <span className="text-blue-800">Discover the truth.</span>
             </h1>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            <p className="text-lg text-neutral-900 max-w-2xl mx-auto">
               Verify any claim, article, or content with our advanced AI-powered fact-checking system. 
               Get instant, reliable results with detailed explanations.
             </p>
@@ -75,27 +75,27 @@ const VerificationInterface = () => {
             onValueChange={(value) => handleInputChange("", value as InputType)}
             className="w-full"
           >
-            <TabsList className="grid w-full grid-cols-3 mb-6">
-              <TabsTrigger value="text" className="flex items-center gap-2">
-                <FileText className="w-4 h-4" />
+            <TabsList className=" grid w-full grid-cols-3 mb-6">
+              <TabsTrigger value="text" className="flex items-center gap-2 text-neutral-900">
+                <FileText className="w-4 h-4 text-neutral-900" />
                 Text
               </TabsTrigger>
-              <TabsTrigger value="url" className="flex items-center gap-2">
+              <TabsTrigger value="url" className="flex items-center gap-2 text-neutral-900">
                 <Link2 className="w-4 h-4" />
                 URL
               </TabsTrigger>
-              <TabsTrigger value="file" className="flex items-center gap-2">
+              <TabsTrigger value="file" className="flex items-center gap-2 text-neutral-900">
                 <Upload className="w-4 h-4" />
                 File
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="text" className="space-y-4">
+            <TabsContent value="text" className="space-y-4 bg-transparent">
               <Textarea
                 placeholder="Paste the text or claim you want to verify here..."
                 value={verificationState.inputValue}
                 onChange={(e) => handleInputChange(e.target.value, "text")}
-                className="min-h-[120px] text-base"
+                className="min-h-[120px] text-base bg-transparent placeholder:text-black text-neutral-900"
                 disabled={verificationState.isAnalyzing}
               />
             </TabsContent>
@@ -141,24 +141,26 @@ const VerificationInterface = () => {
           </Tabs>
 
           <div className="flex justify-center mt-6">
+            <div className="inline-flex bg-blue-800 hover:bg-blue-900 rounded-lg ">
             <Button
               onClick={handleVerify}
               size="lg"
               disabled={!verificationState.inputValue.trim() || verificationState.isAnalyzing}
-              className="px-8 py-6 text-lg font-semibold"
+                className="px-8 py-6 text-lg font-semibold  flex items-center justify-center"
             >
               {verificationState.isAnalyzing ? (
-                <>
+                <span className="text-white flex items-center">
                   <Loader2 className="w-5 h-5 mr-2 animate-spin" />
                   Analyzing...
-                </>
+                </span>
               ) : (
-                <>
+                <span className="text-white flex items-center">
                   <Search className="w-5 h-5 mr-2" />
                   Verify Content
-                </>
+                </span>
               )}
             </Button>
+          </div>
           </div>
         </CardContent>
       </Card>
