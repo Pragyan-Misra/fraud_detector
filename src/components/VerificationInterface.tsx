@@ -141,7 +141,7 @@ const VerificationInterface = () => {
           </Tabs>
 
           <div className="flex justify-center mt-6">
-            <div className="inline-flex bg-blue-800 hover:bg-blue-900 rounded-lg ">
+            <div className="inline-flex bg-blue-500 hover:bg-blue-900  rounded-lg ">
             <Button
               onClick={handleVerify}
               size="lg"
